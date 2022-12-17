@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href = "stylehome.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1262.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript">
+    
+    //Bucket Configurations
+    
+     var bucketName = "textract-job-list";
+     var bucketRegion = "us-west-1";
+     var IdentityPoolId = "us-west-1:6745dc51-f0e9-4c2e-bfe2-91536b9b4a74";
+    
+     AWS.config.update({
+                    region: bucketRegion,
+                    credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: IdentityPoolId
+                    })
+                });
+    
+                var s3 = new AWS.S3({
+                    apiVersion: '2006-03-01',
+                    params: {Bucket: bucketName}
+            });
+    </script>
+</head>
+<body>
+
+  <!Top Bar Design>
+  <div
+  style="box-sizing: border-box;position: fixed;width: 1440px;
+  height: 80px;left: 0px;top: -15px;z-index:-1;background: #000000;">
+    </div>
+
+  <div id="circle"></div>
+
+  <!Box Design>
+  <div
+  style="box-sizing: border-box;position: fixed;width: 300px;height: 155px;
+  left: 575px; top: 296px; background: #000000; border-radius: 45px;">
+</div>
+
+  <!Logo png>
+  <div pic="logo">
+    <img src="NC_Logo.png">
+  </div>
+
+  <!Navbar>
+  <div class = "navbara">
+    <a href = "index.html">Home</a>
+    </div>
+
+  <form action="about.html">
+  <div class = "navbarb">
+    <a href = "about.html">About</a>
+  </div>
+</form>
+
+  <!Upload button>
+  <div class = "upload">
+    <input type="file" id="fileUpload" name="filename" hidden/>
+    <label for="fileUpload">Choose File</label>
+    <button onclick="s3upload()">UPLOAD</button>
+  </div>
+  <script type="text/javascript">
+
+    async function s3upload() {  
+              var files = document.getElementById('fileUpload').files;
+              if (files) 
+              {
+                  var file = files[0];
+                  var fileName = file.name;
+                  var filePath = 'async-doc-text/' + fileName;
+                  var fileUrl = 'https://textract-job-list.s3.us-west-1.amazonaws.com/' +  filePath;
+          
+                  s3.upload({
+                                  Key: filePath,
+                                  Body: file,
+                                  ACL: 'public-read'
+                              }, function(err, data) {
+                                  if(err) {
+                                      alert('It flopped!');
+                                      reject('error');
+                                  }
+                                  
+                                  //alert('Successfully Uploaded!');
+                              }).on('httpUploadProgress', function (progress) {
+                                  $("progress").attr('value', uploaded);
+                              });
+              }
+      redirect();
+      function redirect () {
+         setTimeout(myURL, 5000);
+         var result = document.getElementById("result");
+         result.innerHTML = "<b> The page will redirect after delay of 5 seconds";
+      }
+
+      function myURL() {
+         document.location.href = 'https://textract-job-list.s3.us-west-1.amazonaws.com/files/notecloud_file.txt';
+      }
+    };
+  </script>
+
+  <!BackGround Img>
+  <div pic="BackGround">
+    <img src="BG_Paper.png" style="position: fixed; width: 1370px;
+    height: 1000px; left: 34px; top: -100px; z-index: -5;">
+  </div>
+
+
+</body>
+</html>

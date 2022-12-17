@@ -1,0 +1,113 @@
+
+
+#circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 620px;
+  top: -70px;
+  border-radius: 100px;
+  background: #000000;
+}
+
+.navbar {
+  height: 200px;
+  width: 1000px;
+  position: fixed;
+  z-index: 1;
+  top: 15px;
+  left: 220px;
+  overflow-x: hidden;
+}
+
+.navbara a{
+  position: fixed;
+  left: 520px;
+  top: 12px;
+  text-decoration: none;
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  color: #FFFFFF;
+  display: block;
+}
+
+.navbara a:hover{
+  color: #FFFF00;
+}
+
+.navbarb a{
+  position: fixed;
+  left: 830px;
+  top: 12px;
+  text-decoration: none;
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  color: #FFFFFF;
+  display: block;
+}
+
+.navbarb a:hover{
+  color: #FFFF00;
+}
+
+.upload label{
+  box-sizing: border-box;
+  position: fixed;
+  width: 290px;
+  height: 145px;
+  left: 580px;
+  top: 300px;
+
+  font-family: serif;
+  font-style: normal;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 60px;
+
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 45px;
+  cursor: pointer;
+}
+
+.upload label:hover{
+  color: #000000;
+  background: #FFFFFF
+}
+
+.upload button{
+  box-sizing: border-box;
+  position: fixed;
+  width: 290px;
+  height: 70px;
+  left: 580px;
+  top: 460px;
+
+  font-family: serif;
+  font-style: normal;
+  font-size: 25px;
+  text-align: center;
+
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 45px;
+  cursor: pointer;
+}
+
+.upload button:hover{
+  color: #000000;
+  background: #FFFFFF
+}
+
+img{
+  position: absolute;
+  width: 290px;
+  height: 300px;
+  left: 605px;
+  top: -50px;
+}
+

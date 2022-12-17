@@ -1,0 +1,79 @@
+
+h1{
+	width: 550px;
+}
+
+body{
+  text-align: center;
+}
+img{
+  position: absolute;
+  width: 290px;
+  height: 300px;
+  left: 605px;
+  top: -50px;
+}
+
+.navbara a{
+  position: fixed;
+  left: 628px;
+  top: 12px;
+  text-decoration: none;
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  color: #FFFFFF;
+  display: block;
+}
+.navbarb a{
+  position: fixed;
+  left: 745px;
+  top: 12px;
+  text-decoration: none;
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  color: #FFFFFF;
+  display: block;
+}
+.h1{
+  width: 290px;
+  height: 70px;
+  left: 580px;
+  top: 700px;
+}
+.upload button{
+  box-sizing: border-box;
+  position: fixed;
+  width: 290px;
+  height: 70px;
+  left: 580px;
+  top: 500px;
+
+  font-family: serif;
+  font-style: normal;
+  font-size: 25px;
+  text-align: center;
+
+  color: #whitesmoke;
+  background: #000000;
+  border-radius: 45px;
+  cursor: pointer;
+}
+
+
+.text-block {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+
